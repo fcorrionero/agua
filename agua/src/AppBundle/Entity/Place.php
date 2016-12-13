@@ -14,13 +14,17 @@ class Place {
      * @ORM\GeneratedValue
      */
     protected $id;
+
     /** @ORM\Column(type="string", length=255) */
     protected $name;
+
     /** @ORM\Column(type="text", nullable=true) */
     protected $description;
+
     /** @ORM\Column(type="text", nullable=true) */
     protected $location;
-    /** @ORM\Colum(type="string", length=255) */
+
+    /** @ORM\Column(type="string", length=255) */
     protected $picture;
 
     /**
