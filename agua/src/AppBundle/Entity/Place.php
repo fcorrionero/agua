@@ -27,6 +27,44 @@ class Place {
     /** @ORM\Column(type="string", length=255) */
     protected $picture;
 
+    /** @ORM\Column(type="string",length=255) */
+    protected $town;
+
+    /** @ORM\Column(type="string",length=255) */
+    protected $province;
+
+    /**
+     * @return mixed
+     */
+    public function getTown()
+    {
+        return $this->town;
+    }
+
+    /**
+     * @param mixed $town
+     */
+    public function setTown($town)
+    {
+        $this->town = $town;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+    /**
+     * @param mixed $province
+     */
+    public function setProvince($province)
+    {
+        $this->province = $province;
+    }
+
     /**
      * @return mixed
      */

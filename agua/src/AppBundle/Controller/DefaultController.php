@@ -4,22 +4,29 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-//use AppBundle\Entity\PlaceRepository;
+
 
 class DefaultController extends Controller
 {
 
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $helpers = $this->get('app.helpers');
 
         $em = $this->getDoctrine()->getEntityManager();
-        $place = $em->getRepository('AppBundle:Place');
-        dump($place);
-        exit();
+        $places = $em->getRepository('AppBundle:Place')->findAll();
+        $json = $helpers->json($places);
 
-        return $this->render('default/index.html.twig', [
+        return $helpers->setResponseJson($json);
+
+        /*return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
+        ]);*/
+    }
+
+    public function viewAction(Request $request){
+        $json = $request->get('json',null);
+        dump($json);
+        exit();
     }
 }
