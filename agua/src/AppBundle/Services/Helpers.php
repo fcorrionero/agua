@@ -8,14 +8,16 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 class Helpers {
 
-    public function json($object){
+    public $serializer;
+
+    public function __construct(){
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizers = array(new ObjectNormalizer());
-        $serializer = new Serializer($normalizers, $encoders);
+        $this->serializer = new Serializer($normalizers, $encoders);
+    }
 
-        $json = $serializer->serialize($object, 'json');
-
-        return $json;
+    public function json($object){
+        return $this->serializer->serialize($object, 'json');
     }
 
     public function setResponseJson($json){
@@ -24,5 +26,9 @@ class Helpers {
         $response->headers->set("Content-Type", "application/json");
 
         return $response;
+    }
+
+    public function getObjectFromJson($json){
+        return $this->serializer->deserialize($json,'Data','json');
     }
 }

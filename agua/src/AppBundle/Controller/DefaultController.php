@@ -19,14 +19,34 @@ class DefaultController extends Controller
 
         return $helpers->setResponseJson($json);
 
-        /*return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);*/
     }
 
     public function viewAction(Request $request){
-        $json = $request->get('json',null);
-        dump($json);
-        exit();
+        $helpers = $this->get('app.helpers');
+
+        $data = json_decode($request->get('json',null));
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $place = $em->getRepository('AppBundle:Place')->find($data->id);
+
+        $json = $helpers->json($place);
+
+        return $helpers->setResponseJson($json);
+    }
+
+    public function searchAction(Request $request){
+        $helpers = $this->get('app.helpers');
+
+        $data = json_decode($request->get('json',null));
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $place = $em->getRepository('AppBundle:Place')->findBy(
+            array(
+                'town' => $data->town
+            )
+        );
+
+        $json = $helpers->json($place);
+        return $helpers->setResponseJson($json);
     }
 }
