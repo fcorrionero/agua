@@ -9,3 +9,7 @@ default_view:
 default_search:
     path: /search
     defaults: { _controller: "AppBundle:Default:search" }
+
+default_towns:
+    path: /towns
+    defaults: { _controller: "AppBundle:Default:towns" }

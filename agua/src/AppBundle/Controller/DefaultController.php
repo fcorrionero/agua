@@ -49,4 +49,13 @@ class DefaultController extends Controller
         $json = $helpers->json($place);
         return $helpers->setResponseJson($json);
     }
+
+    public function townsAction(Request $request){
+        $helpers = $this->get('app.helpers');
+        $em = $this->getDoctrine()->getEntityManager();
+        $towns = $em->getRepository('AppBundle:Place')->findTowns();
+
+        $json = $helpers->json($towns);
+        return $helpers->setResponseJson($json);
+    }
 }
