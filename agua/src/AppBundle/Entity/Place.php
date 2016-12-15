@@ -24,13 +24,13 @@ class Place {
     /** @ORM\Column(type="text", nullable=true) */
     protected $location;
 
-    /** @ORM\Column(type="string", length=255) */
+    /** @ORM\Column(type="string", length=255, nullable=true) */
     protected $picture;
 
-    /** @ORM\Column(type="string",length=255) */
+    /** @ORM\Column(type="string",length=255, nullable=true) */
     protected $town;
 
-    /** @ORM\Column(type="string",length=255) */
+    /** @ORM\Column(type="string",length=255, nullable=true) */
     protected $province;
 
     /**
