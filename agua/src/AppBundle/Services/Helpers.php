@@ -31,4 +31,8 @@ class Helpers {
     public function getObjectFromJson($json){
         return $this->serializer->deserialize($json,'Data','json');
     }
+
+    public function getObjectFromXml($xml){
+        return $this->serializer->deserialize($xml,'Data','xml');
+    }
 }

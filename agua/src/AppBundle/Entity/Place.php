@@ -33,6 +33,46 @@ class Place {
     /** @ORM\Column(type="string",length=255, nullable=true) */
     protected $province;
 
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $track_route;
+
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $tourist_offer;
+
+    /**
+     * @return mixed
+     */
+    public function getTrackRoute()
+    {
+        return $this->track_route;
+    }
+
+    /**
+     * @param mixed $track_route
+     */
+    public function setTrackRoute($track_route)
+    {
+        $this->track_route = $track_route;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTouristOffer()
+    {
+        return $this->tourist_offer;
+    }
+
+    /**
+     * @param mixed $tourist_offer
+     */
+    public function setTouristOffer($tourist_offer)
+    {
+        $this->tourist_offer = $tourist_offer;
+    }
+
+
+
     /**
      * @return mixed
      */

@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Finder\Finder;
 
 
 class DefaultController extends Controller
@@ -57,5 +58,19 @@ class DefaultController extends Controller
 
         $json = $helpers->json($towns);
         return $helpers->setResponseJson($json);
+    }
+
+    public function loadAction(Request $request){
+        $helpers = $this->get('app.helpers');
+        $finder = new Finder();
+        $finder->files()->in(__DIR__.'/../Resources/Maps');
+        $path = '';
+        foreach ($finder as $file) {
+            $path = $file->getRealPath();
+        }
+        $xml = file_get_contents($path);
+        $object = simplexml_load_string($xml);
+        dump($object);
+        exit();
     }
 }

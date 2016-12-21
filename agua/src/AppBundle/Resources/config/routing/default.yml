@@ -13,3 +13,7 @@ default_search:
 default_towns:
     path: /towns
     defaults: { _controller: "AppBundle:Default:towns" }
+
+default_load:
+    path: /load
+    defaults: { _controller: "AppBundle:Default:load" }
