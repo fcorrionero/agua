@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Angular QuickStart</title>
+    <base href="/">
+    <title>Ruta del agua</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="bootstrap/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -17,9 +21,12 @@
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3tnbE35t9_FT3yLxfKiDMc8a_f81nF0E&callback=initMap"></script>
   </head>
 
   <body>
-    <my-app>Loading AppComponent content here ...</my-app>
+        <div class="container-fluid">
+          <my-app>Loading AppComponent content here ...</my-app>
+        </div>
   </body>
 </html>
