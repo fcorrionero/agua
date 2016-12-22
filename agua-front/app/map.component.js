@@ -9,26 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MapComponent = (function () {
-    function MapComponent() {
+var MapComponent /*implements OnInit*/ = (function () {
+    function MapComponent /*implements OnInit*/() {
         this.name = 'Map';
     }
-    MapComponent.prototype.ngOnInit = function () {
-        var map = new google.maps.Map(document.getElementById('map'));
-        var georssLayer = new google.maps.KmlLayer({
-            url: 'http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss'
-        });
-        georssLayer.setMap(map);
-    };
-    MapComponent = __decorate([
+    MapComponent /*implements OnInit*/ = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'map',
             templateUrl: './templates/map.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], MapComponent);
-    return MapComponent;
+    ], MapComponent /*implements OnInit*/);
+    return MapComponent /*implements OnInit*/;
 }());
-exports.MapComponent = MapComponent;
+exports.MapComponent /*implements OnInit*/ = MapComponent /*implements OnInit*/;
 //# sourceMappingURL=map.component.js.map

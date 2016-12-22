@@ -9,27 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var app_component_1 = require('./app.component');
-var list_component_1 = require('./components/list.component');
-//import { DetailComponent } from './detail.component';
-//import { SearchComponent } from './search.component';
-var appRoutes = [
-    { path: '', redirectTo: '/index', pathMatch: 'full' },
-    { path: 'index', component: app_component_1.AppComponent },
-    { path: 'list', component: list_component_1.ListComponent }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+//declare var google: any;
+var MapComponent /*implements OnInit*/ = (function () {
+    function MapComponent /*implements OnInit*/() {
+        this.name = 'Map';
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes)],
-            exports: [router_1.RouterModule]
+    MapComponent /*implements OnInit*/ = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'map',
+            templateUrl: '../templates/map.html',
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], MapComponent /*implements OnInit*/);
+    return MapComponent /*implements OnInit*/;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.MapComponent /*implements OnInit*/ = MapComponent /*implements OnInit*/;
+//# sourceMappingURL=map.component.js.map
