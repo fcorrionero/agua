@@ -39,6 +39,26 @@ class Place {
     /** @ORM\Column(type="string",length=255, nullable=true) */
     protected $tourist_offer;
 
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $size;
+
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $distance; // distancia al pueblo
+
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $rise_length; //metros de ascensión
+
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $path_type; //tipo sendero
+
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $latitude;
+
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $longitude;
+
+
+
     /**
      * @return mixed
      */
@@ -128,6 +148,102 @@ class Place {
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * @param mixed $size
+     */
+    public function setSize($size)
+    {
+        $this->size = $size;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDistance()
+    {
+        return $this->distance;
+    }
+
+    /**
+     * @param mixed $distance
+     */
+    public function setDistance($distance)
+    {
+        $this->distance = $distance;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRiseLength()
+    {
+        return $this->rise_length;
+    }
+
+    /**
+     * @param mixed $rise_length
+     */
+    public function setRiseLength($rise_length)
+    {
+        $this->rise_length = $rise_length;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPathType()
+    {
+        return $this->path_type;
+    }
+
+    /**
+     * @param mixed $path_type
+     */
+    public function setPathType($path_type)
+    {
+        $this->path_type = $path_type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * @param mixed $latitude
+     */
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * @param mixed $longitude
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
     }
 
     /**
