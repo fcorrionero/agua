@@ -57,6 +57,11 @@ class Place {
     /** @ORM\Column(type="string",length=255, nullable=true) */
     protected $longitude;
 
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $author;
+
+    /** @ORM\Column(type="string",length=255, nullable=true) */
+    protected $annotation;
 
 
     /**
@@ -300,6 +305,38 @@ class Place {
     public function setLocation($location)
     {
         $this->location = $location;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAnnotation()
+    {
+        return $this->annotation;
+    }
+
+    /**
+     * @param mixed $annotation
+     */
+    public function setAnnotation($annotation)
+    {
+        $this->annotation = $annotation;
     }
 
 }
